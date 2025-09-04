@@ -1,0 +1,25 @@
+body{
+    background-image: linear-gradient(to right,#ffbf00,#ff00c8);
+    display: flex;
+    justify-content: center;
+    height: 750px;
+    align-items: center;
+    font-family: sans-serif;
+}
+.box{
+    width: 600px;
+    height: 300px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+button{
+    background-color: black;
+    color: rgb(255, 255, 255);
+    border: none;
+    padding: 15px;
+    margin: 15px;
+    border-radius: 15px;
+}

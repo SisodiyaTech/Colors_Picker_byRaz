@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose the Random color for your webpage</title>
+    <style>
+        body {
+            background-image: linear-gradient(to right, #ffbf00, #ff00c8);
+            display: flex;
+            justify-content: center;
+            height: 750px;
+            align-items: center;
+            font-family: sans-serif;
+        }
+
+        .box {
+            width: 600px;
+            height: 300px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        button {
+            background-color: black;
+            color: rgb(255, 255, 255);
+            border: none;
+            padding: 15px;
+            margin: 15px;
+            border-radius: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <h1>Random Gradient Color Picker</h1>
+        <p id="pcol">background-image: linear-gradient(to right, #ffbf00, #ff00c8);</p>
+        <div>
+            <button onclick="changeColor()">Change</button>
+        </div>
+    </div>
+
+    <script>
+        let pcol = document.getElementById("pcol");
+
+        const colorVal1 = function () {
+            let color = "0123456789ABCDEF";
+            let colorValue = "#";
+
+            for (let i = 0; i < 6; i++) {
+                colorValue = colorValue + color[Math.floor(Math.random() * 16)];
+            }
+            return colorValue;
+        }
+        const colorVal2 = () => {
+            let color = "0123456789ABCDEF";
+            let colorValue = "#";
+
+            for (let i = 0; i < 6; i++) {
+                colorValue = colorValue + color[Math.floor(Math.random() * 16)];
+            }
+            return colorValue;
+        }
+
+
+        function changeColor() {
+
+            let color1 = colorVal1();
+            let color2 = colorVal2();
+
+            document.body.style.backgroundImage =
+                `linear-gradient(to right,${color1},${color2})`
+
+            pcol.innerText =
+                `background-image: linear-gradient(to right,${color1},${color2});`
+
+
+        };
+
+
+    </script>
+
+</body>
+
+</html>
